@@ -1,5 +1,25 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## SETUP
+
+### Firebase Functions
+
+Setup a firebase project with spark billing enabled.
+Make sure you have enabled Firebase Firestore.
+
+Edit the .env to point to where your firebase functions base url is.
+
+```bash
+cd <project root>
+npm i
+npm i -g firebase-tools
+firebase login
+firebase functions:config:set fullstory.token="<FULLSTORY TOKEN HERE>" --project <firebase-project-id>
+firebase deploy --only functions --project <firebase-project-id>
+npm run build
+firebase deploy --project <firebase-project-id>
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
