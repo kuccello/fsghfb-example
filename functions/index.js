@@ -164,7 +164,11 @@ app.post('/user/githubtoken', validateFirebaseIdToken, asyncMiddleware(async (re
 }))
 
 app.post('/github/webhook', (request, response) => {
-  console.log(request.body)
+  console.log(request.body.payload)
+  // TODO: as an excercise you could update the stored issue record here
+  // however, since FullStory lacks deep functionality with the REST api this is of limited use for
+  // this example but does open the question of what is planned to expand the REST api for deeper
+  // app integrations.
   response.status(200).send('OK')
 })
 
